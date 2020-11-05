@@ -143,10 +143,10 @@
         var canvas_width = 750;
         var canvas_height = 1098;
 
-        var face_width = 439;
-        var face_height = 419;
-        var face_x = (canvas_width - (face_width + 50)) / 2;
-        var face_y = face_height / -4;
+        var face_width = 750;
+        var face_height = 1098;
+        var face_x = (canvas_width - face_width) / 2;
+        var face_y = face_height / -30;
 
         var canvas = document.getElementById('canvas');
 
@@ -163,7 +163,7 @@
             if (document.getElementById('face').src) {
                 face_img = document.getElementById('face').src;
             } else {
-                face_img = 'cara.png?v=1';
+                face_img = 'tom.jpg?v=1';
             }
 
             // cara
@@ -179,8 +179,8 @@
 
 
 
-                width = face_width + 80;
-                height = face_height + 80;
+                width = face_width;// + 80;
+                height = face_height;// + 80;
 
 
 
@@ -192,7 +192,7 @@
 
                 // poster
                 var image2 = new Image();
-                image2.src = 'cartel.png';
+                image2.src = 'venom.png';
                 image2.onload = function () {
                     var canvasContext2 = canvas.getContext('2d');
                     width = canvas_width;
@@ -276,14 +276,16 @@
             face_width = document.getElementById('face').width;
             face_height = document.getElementById('face').height;
 
+
             if (face_width > 1000) {
-                face_width_now = face_width / 5;
+                face_width_now = canvas_width * 1.5;
                 face_height = (face_height * face_width_now) / face_width;
                 face_width = face_width_now;
             }
 
-            face_y = face_height / -4;
-            face_x = (canvas_width - (face_width + 50)) / 2;
+
+            face_y = (canvas_height - face_height) / 2;
+            face_x = (canvas_width - (face_width)) / 2;
             preview();
         };
 
